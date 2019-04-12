@@ -9,10 +9,11 @@ constructor(element) {
         this.images = this.element.querySelectorAll("img");
         this.currentIndex = 0;
         this.currentImage = this.images[this.currentIndex];
-    
+
         console.log(this.currentImage);
 
         this.rightButton.addEventListener("click", () => this.buttonClick("right") );
+        this.leftButton.addEventListener("click", () => this.buttonClick("left"));
     }
 
     buttonClick(direction) {
