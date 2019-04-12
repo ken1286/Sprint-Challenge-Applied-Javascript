@@ -9,15 +9,21 @@ constructor(element) {
         this.images = this.element.querySelectorAll("img");
         this.currentIndex = 0;
         this.currentImage = this.images[this.currentIndex];
+    
         console.log(this.currentImage);
-        // this.rightButton.addEventListener("click", )
+
+        this.rightButton.addEventListener("click", () => this.buttonClick("right") );
     }
 
     buttonClick(direction) {
+        this.images.forEach( image => image.style.display = "none");
+
         if(direction === "right") {
             this.currentIndex += 1;
+            this.currentImage.style.display = "flex";
         } else if(direction === "left") {
-            this.currentIndex -= 0;
+            this.currentIndex -= 1;
+            this.currentImage.style.display = "flex";
         }
     }
 }
